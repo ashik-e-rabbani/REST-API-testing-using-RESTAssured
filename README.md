@@ -1,2 +1,4 @@
 # REST-API-testing-using-RESTAssured
-REST API testing; 
+Library: RESTAssured
+Framework: TestNg
+Build : Maven

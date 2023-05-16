@@ -80,4 +80,30 @@ Step 2: Add Json schema in classpath (target/classes/userSchema.json)
 
     }
 
+    @Test(priority = 4)
+    public void timeout_handle() {
+/*
+It's important to note that setting a global timeout with
+RestAssured.config().httpClient() will affect all subsequent
+REST Assured requests within the same execution.
+ */
+        int timeoutInSeconds = 10;
+        // Set the global timeout for REST Assured
+        RestAssured.config().httpClient(
+                RestAssured.config().getHttpClientConfig().setParam(
+                        "http.connection.timeout", timeoutInSeconds * 1000
+                )
+        );
+
+        RestAssured.baseURI = "https://reqres.in/api";
+        RestAssured.given()
+                .when()
+                .get("/users/2")
+                .then()
+                .assertThat()
+                .statusCode(200);
+
+
+    }
+
 }

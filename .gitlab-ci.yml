@@ -1,0 +1,6 @@
+image: maven:3.8.4-openjdk-8
+
+test:
+  stage: test
+  script:
+    - mvn test

@@ -23,7 +23,7 @@ public class RequestResponseSpecification {
         reqSpec = RestAssured.given()
                 .baseUri("https://reqres.in/");
         resSpec = RestAssured.expect()
-                .statusCode(201);
+                .statusCode(200);
 
 
     }

@@ -1,0 +1,7 @@
+<suite name="MyTestSuite">
+    <test name="MyTestClass">
+        <classes>
+            <class name="tests.RequestResponseSpecification" />
+        </classes>
+    </test>
+</suite>

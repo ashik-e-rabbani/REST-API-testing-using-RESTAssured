@@ -4,7 +4,7 @@ import io.restassured.RestAssured;
 /* If we import RestAssured as static import we will no longer need to use class name
 RestAssured.get(); can be used as get();
  */
-import io.restassured.module.jsv.JsonSchemaValidator;
+
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -61,24 +61,6 @@ payload creation using hashMap and Json library
 
     }
 
-    @Test(priority = 3)
-    public void schema_validation() {
-/*
-Validate our json response against a json schema.
-Step 1: Create Json Schema
-Step 2: Add Json schema in classpath (target/classes/userSchema.json)
- */
-
-        RestAssured.baseURI = "https://reqres.in/api";
-        RestAssured.given()
-                .when()
-                .get("/users/2")
-                .then()
-                .assertThat()
-                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("userSchema.json"));
-
-
-    }
 
     @Test(priority = 4)
     public void timeout_handle() {

@@ -2,9 +2,12 @@ package tests;
 
 import io.restassured.RestAssured;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners
 public class SchemaValidation {
+
     @Test(priority = 0)
     public void schema_validation() {
 /*

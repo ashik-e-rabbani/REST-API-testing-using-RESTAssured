@@ -1,7 +1,7 @@
 <suite name="MyTestSuite">
     <test name="MyTestClass">
         <classes>
-            <class name="tests.RequestResponseSpecification" />
+            <class name="tests.SchemaValidation" />
         </classes>
     </test>
 </suite>
